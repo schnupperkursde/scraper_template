@@ -48,6 +48,8 @@ docker-compose run scraper
 
 
 ## Something is missing in the docker image. What can I do?
-Do not hesitate to open an issue. We will add anything you need.
+Do not hesitate to open an issue: https://github.com/schnupperkursde/scraper_template/issues. 
+We will add anything you need.
 ## Something is wrong with the template. What can I do?
-Do not hesitate to open an issue. We will try to find a solution for your problem.
+Do not hesitate to open an issue: https://github.com/schnupperkursde/scraper_template/issues. 
+We will try to find a solution for your problem.
