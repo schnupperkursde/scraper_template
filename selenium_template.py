@@ -42,7 +42,7 @@ def save_results(data):
             worksheet.write(row, col, entry)
     logging.info('finished saving results')
 
-
-driver = setup_selenium_driver()
-scrape_results = parse(driver)
-save_results(scrape_results)
+if __name__ == "__main__":
+    driver = setup_selenium_driver()
+    scrape_results = parse(driver)
+    save_results(scrape_results)
