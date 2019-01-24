@@ -30,7 +30,7 @@ git clone https://github.com/schnupperkursde/scraper_template.git
 * Ubuntu: https://askubuntu.com/questions/183775/how-do-i-open-a-terminal
 
 ##### 1. Copy the template file
-
+Choose a suitable name and rename the template:
 ```
 cp selenium_template.py my_scraper.py
 ```
@@ -45,6 +45,9 @@ docker-compose run scraper
 ```
 /workdir # python my_scraper.py
 ```
+
+#### 4. Implement the scraper
+Add the functionality in the function ``` parse``` in your renamed scraper file ```my_scraper.py```
 
 
 ## Something is missing in the docker image. What can I do?
