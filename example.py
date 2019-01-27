@@ -30,7 +30,6 @@ def parse(selenium_driver):
     results = []
     selenium_driver.get(URL)
     count = len(selenium_driver.find_elements_by_css_selector(".course_date_link.link"))
-    count = 1
     for idx in range(count):
         logging.info('processing course {} of {}'.format(idx+1, count))
         selenium_driver.get(URL)
