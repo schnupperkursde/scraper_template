@@ -29,10 +29,12 @@ def parse(selenium_driver):
 def save_results(data):
     logging.info('starting saving results')
     """
-        data is expected to be an array of arrays. Each entry should consist of Title, Day, Start, Time, End, Time, Description.
-        E.g. [['Vinyasa Yoga', 'So', '10:00', '12:00', 'Einführung in Vinyasa Yoga'], ['Karate', 'So', '13:00', '15:00', 'Einführung in Karate']]
+        data is expected to be an array of arrays. Each entry should consist of 'course_title', 'category', 'day', 'start_time', 'end_time', 
+              'location', 'description', 'level', 'trainer', 'other'
+        E.g. [['Vinyasa Yoga', 'Yoga', 'So', '10:00', '12:00', 'Turnhalle Oststr', 'Einführung in Vinyasa Yoga', 'Beginner', 'Max Mustermann', '']]
     """
-    header = ['Title', 'Day', 'Start', 'Time', 'End', 'Time', 'Description']
+    header = [['course_title', 'category', 'day', 'start_time', 'end_time',
+              'location', 'description', 'level', 'trainer', 'other']]
     data = header + data
     filename = os.path.basename(__file__).split('.')[0] + '_' + str(datetime.datetime.now()) + '.xlsx'
     workbook = Workbook(filename)
@@ -41,6 +43,7 @@ def save_results(data):
         for col,entry in enumerate(line):
             worksheet.write(row, col, entry)
     logging.info('finished saving results')
+
 
 if __name__ == "__main__":
     driver = setup_selenium_driver()
