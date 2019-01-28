@@ -48,7 +48,7 @@ docker-compose run scraper
 
 #### 4. Implement the scraper
 Add the functionality in the function ``` parse``` in your renamed scraper file ```my_scraper.py```
-
+Checkout `example.py` for a full scraper example.
 
 ## Something is missing in the docker image. What can I do?
 Do not hesitate to open an issue: https://github.com/schnupperkursde/scraper_template/issues. 
