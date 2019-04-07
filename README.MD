@@ -64,6 +64,8 @@ Please *do not* depend on any files not provided by the docker image.
 If you need a library not provided by the docker image, open an issue: https://github.com/schnupperkursde/scraper_template/issues.
 #### 4. script reproducibility
 Please ensure your script delivers the same result every time executed.
+#### 5. correct paths
+Please ensure that your script writes to the path '/workdir/output/'. 
 
 ## Something is missing in the docker image. What can I do?
 Do not hesitate to open an issue: https://github.com/schnupperkursde/scraper_template/issues. 
