@@ -41,7 +41,7 @@ def save_results(data):
     logging.info('finished saving results to file {}'.format(filename))
 
 
-if __name__ == "__main__":
-    driver = setup_selenium_driver()
-    scrape_results = parse(driver)
-    save_results(scrape_results)
+
+driver = setup_selenium_driver()
+scrape_results = parse(driver)
+save_results(scrape_results)
