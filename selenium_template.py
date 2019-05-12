@@ -42,11 +42,9 @@ def save_results(data):
     workbook.close()
     logging.info('finished saving results to file {}'.format(filename))
 
-
-if __name__ == "__main__":
-    start = time.time()
-    driver = setup_selenium_driver()
-    scrape_results = parse(driver)
-    save_results(scrape_results)
-    end = time.time()
-    logging.info('execution took {} secs'.format(end-start))
+start = time.time()
+driver = setup_selenium_driver()
+scrape_results = parse(driver)
+save_results(scrape_results)
+end = time.time()
+logging.info('execution took {} secs'.format(end - start))
