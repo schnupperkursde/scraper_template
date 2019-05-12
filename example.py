@@ -62,7 +62,8 @@ def save_results(data):
     header = [['course_title', 'category', 'day', 'start_time', 'end_time',
               'location', 'description', 'level', 'trainer', 'other']]
     data = header + data
-    filename = os.path.basename(__file__).split('.')[0] + '_' + str(datetime.datetime.now()) + '.xlsx'
+    output_path = '/workdir/output/'
+    filename = output_path + os.path.basename(__file__).split('.')[0] + '_' + str(datetime.datetime.now()).replace(":", "_") + '.xlsx'
     workbook = Workbook(filename)
     worksheet = workbook.add_worksheet()
     for row,line in enumerate(data):

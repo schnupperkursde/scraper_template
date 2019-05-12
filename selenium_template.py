@@ -4,6 +4,7 @@ import logging
 import os
 from xlsxwriter.workbook import Workbook
 import datetime
+import time
 logging.basicConfig(level = logging.INFO)
 
 
@@ -31,7 +32,8 @@ def save_results(data):
     header = [['course_title', 'category', 'day', 'start_time', 'end_time',
               'location', 'description', 'level', 'trainer', 'other']]
     data = header + data
-    filename = os.path.basename(__file__).split('.')[0] + '_' + str(datetime.datetime.now()) + '.xlsx'
+    output_path = '/workdir/output/'
+    filename = output_path + os.path.basename(__file__).split('.')[0] + '_' + str(datetime.datetime.now()).replace(":", "_") + '.xlsx'
     workbook = Workbook(filename)
     worksheet = workbook.add_worksheet()
     for row,line in enumerate(data):
@@ -42,6 +44,9 @@ def save_results(data):
 
 
 if __name__ == "__main__":
+    start = time.time()
     driver = setup_selenium_driver()
     scrape_results = parse(driver)
     save_results(scrape_results)
+    end = time.time()
+    logging.info('execution took {} secs'.format(end-start))
